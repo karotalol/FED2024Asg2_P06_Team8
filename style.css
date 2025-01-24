@@ -62,10 +62,10 @@ footer {
 }
 
 .carousel {
-    width: 80%;
+    width: 50%;
     margin: 20px auto;
-    border: 2px solid #ddd;
-    border-radius: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     overflow: hidden;
     position: relative;
 }
@@ -73,9 +73,9 @@ footer {
 .carousel-image {
     width: 100%;
     display: none;
+
 }
 
 .carousel-image:first-child {
     display: block;
 }
-
