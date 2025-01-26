@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MokeSell</title>
+    <link rel="stylesheet" href="../css-folders/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><button class="offcanvas-toggle" aria-label="Toggle Navigation">☰</button></li>
+                <li><h1 class="site-title">MokeSell</h1></li>
+                <li><a href="#homepage">Homepage</a></li>
+                <li><a href="#wishlist">Wishlist</a></li>
+                <li><a href="#listing">Listing</a></li>
+                <li><input type="text" placeholder="Search for an item..." class="search-bar" id="search-bar"></li>
+                <li><div id="search-suggestions" class="search-suggestions"></div></li>
+                                <li class="notification-container">
+                    <button class="icon-button notification-button" title="Notifications">🔔</button>
+                    <div class="notification-box">
+                        <p>No new notifications.</p>
+                    </div>
+                </li>
+                <li><button class="icon-button" title="Shopping Cart">🛒</button></li>
+                <li><button class="icon-button" title="User Profile">👤</button></li>
+                <li><button class="icon-button" title="Settings">⚙</button></li>
+                <li><a href="login.html" class="nav-login-button">Login</a></li>
+            </ul>
+        </nav>
+        <div class="offcanvas-menu">
+            <ul>
+                <li><a href="#homepage">🏠 Homepage</a></li>
+                <li><a href="#wishlist">👤 Profile</a></li>
+                <li><a href="#listing">💬 Messages</a></li>
+                <li><a href="#contact">🧑‍🤝‍🧑 Following</a></li>
+                <li><a href="#contact">🛒 Shopping Cart</a></li>
+                <li><a href="#contact">💹 Listing</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section id="homepage" class="center-content">
+            <h2>Advertisement</h2>
+            <div class="carousel">
+                <img src="../images/advert1.png" alt="Ad 1" class="carousel-image">
+                <img src="../images/advert2.png" alt="Ad 2" class="carousel-image">
+                <img src="../images/advert3.png" alt="Ad 3" class="carousel-image">
+            </div>
+        </section>
+
+        <section id="categories" class="content-grid">
+            <h2>Categories</h2>
+            <div class="grid">
+                <div class="card"><img src="images/cat1.png" alt="Category 1"><p>Cat 1</p></div>
+                <div class="card"><img src="images/cat2.png" alt="Category 2"><p>Cat 2</p></div>
+                <div class="card"><img src="images/cat3.png" alt="Category 3"><p>Cat 3</p></div>
+                <div class="card"><img src="images/cat4.png" alt="Category 4"><p>Cat 4</p></div>
+                <div class="card"><img src="images/cat5.png" alt="Category 5"><p>Cat 5</p></div>
+                <div class="card"><img src="images/cat6.png" alt="Category 6"><p>Cat 6</p></div>
+                <div class="card"><img src="images/cat7.png" alt="Category 7"><p>Cat 7</p></div>
+                <div class="card"><img src="images/cat8.png" alt="Category 8"><p>Cat 8</p></div>
+                <div class="card"><img src="images/cat9.png" alt="Category 9"><p>Cat 9</p></div>
+                <div class="card"><img src="images/cat10.png" alt="Category 10"><p>Cat 10</p></div>
+            </div>
+        </section>
+
+        <section id="for-you" class="content-grid">
+            <h2>For You</h2>
+            <div id="product-grid" class="grid">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MokeSell</p>
+    </footer>
+    <script src="../js-folders/script.js"></script>
+</body>
+</html>
