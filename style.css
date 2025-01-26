@@ -10,8 +10,6 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
 }
 
 header {
@@ -29,7 +27,6 @@ nav ul {
     display: flex;
     justify-content: center;
     padding: 0;
-    background: #444;
     margin: 0;
 }
 
@@ -74,6 +71,14 @@ footer {
     width: 100%;
     display: none;
 
+/* Offcanvas Toggle Button */
+.offcanvas-toggle {
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
 }
 
 .carousel-image:first-child {
