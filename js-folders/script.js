@@ -44,79 +44,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // change image every 3 seconds
     setInterval(nextImage, 3000);
 
-    // fetch and display products
-    async function fetchProducts(query = '') {
-        try {
-            const response = await fetch('https://fakestoreapi.com/products');
-            const products = await response.json();
-
-            const filteredProducts = products.filter(product =>
-                product.title.toLowerCase().includes(query.toLowerCase())
-            );
-
-            productGrid.innerHTML = '';
-
-            if (filteredProducts.length > 0) {
-                filteredProducts.forEach(product => {
-                    const productCard = document.createElement('div');
-                    productCard.classList.add('card');
-                    productCard.innerHTML = `
-                        <img src="${product.image}" alt="${product.title}">
-                        <h3>${product.title}</h3>
-                        <p>$${product.price.toFixed(2)}</p>
-                        <button class="buy-button">Buy Now</button>
-                    `;
-                    productGrid.appendChild(productCard);
-                });
-            } else {
-                productGrid.innerHTML = '<p>No products found</p>';
-            }
-        } catch (error) {
-            console.error('Error fetching products:', error);
-            productGrid.innerHTML = '<p>Failed to fetch products. Please try again later.</p>';
-        }
-    }
-
     // show search suggestions as cards below the search bar
     function showSearchSuggestions(query) {
         if (!query) {
-            searchSuggestions.innerHTML = ''; 
-            searchSuggestions.classList.remove('active'); 
+            searchSuggestions.innerHTML = '';
+            searchSuggestions.classList.remove('active');
             return;
         }
 
-        fetch('https://fakestoreapi.com/products')
-            .then(response => response.json())
-            .then(products => {
-                const filteredSuggestions = products.filter(product =>
-                    product.title.toLowerCase().includes(query.toLowerCase())
-                );
+        const suggestions = [
+            { title: 'Product 1', image: 'path-to-image1.jpg' },
+            { title: 'Product 2', image: 'path-to-image2.jpg' },
+            { title: 'Product 3', image: 'path-to-image3.jpg' },
+        ];
 
-                searchSuggestions.innerHTML = '';
+        const filteredSuggestions = suggestions.filter(suggestion =>
+            suggestion.title.toLowerCase().includes(query.toLowerCase())
+        );
 
-                // show suggestions below the search bar
-                if (filteredSuggestions.length > 0) {
-                    searchSuggestions.classList.add('active'); 
-                    filteredSuggestions.forEach(product => {
-                        const suggestionCard = document.createElement('div');
-                        suggestionCard.classList.add('suggestion-card');
-                        suggestionCard.innerHTML = `
-                            <img src="${product.image}" alt="${product.title}" class="suggestion-img">
-                            <p>${product.title}</p>
-                        `;
-                        suggestionCard.addEventListener('click', () => {
-                            searchBar.value = product.title; 
-                            searchSuggestions.innerHTML = ''; 
-                            searchSuggestions.classList.remove('active');
-                            fetchProducts(product.title); 
-                        });
-                        searchSuggestions.appendChild(suggestionCard);
-                    });
-                } else {
-                    searchSuggestions.innerHTML = '<p>No suggestions found</p>';
-                }
-            })
-            .catch(error => console.error('Error fetching suggestions:', error));
+        searchSuggestions.innerHTML = '';
+
+        if (filteredSuggestions.length > 0) {
+            searchSuggestions.classList.add('active');
+            filteredSuggestions.forEach(suggestion => {
+                const suggestionCard = document.createElement('div');
+                suggestionCard.classList.add('suggestion-card');
+                suggestionCard.innerHTML = `
+                    <img src="${suggestion.image}" alt="${suggestion.title}" class="suggestion-img">
+                    <p>${suggestion.title}</p>
+                `;
+                suggestionCard.addEventListener('click', () => {
+                    searchBar.value = suggestion.title;
+                    searchSuggestions.innerHTML = '';
+                    searchSuggestions.classList.remove('active');
+                    fetchProducts(suggestion.title);
+                });
+                searchSuggestions.appendChild(suggestionCard);
+            });
+        } else {
+            searchSuggestions.innerHTML = '<p>No suggestions found</p>';
+        }
     }
 
     // product fetch
@@ -128,11 +95,17 @@ document.addEventListener('DOMContentLoaded', () => {
         showSearchSuggestions(query);
     });
 
-    // close suggestions when clicking outside
     body.addEventListener('click', (event) => {
         if (!searchSuggestions.contains(event.target) && event.target !== searchBar) {
-            searchSuggestions.innerHTML = ''; 
+            searchSuggestions.innerHTML = '';
             searchSuggestions.classList.remove('active');
         }
     });
 });
+
+function handleRegister(event) {
+    event.preventDefault(); 
+
+
+    window.location.href = '../index.html';
+}

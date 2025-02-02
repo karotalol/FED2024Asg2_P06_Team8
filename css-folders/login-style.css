@@ -9,7 +9,8 @@ body {
     height: 100vh;
 }
 
-.login-container {
+/* container for both login and register forms */
+.container {
     background-color: #e0e0e0;
     padding: 2rem;
     border-radius: 20px;
@@ -19,13 +20,13 @@ body {
     max-width: 400px;
 }
 
-.login-container h1 {
+.container h1 {
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     color: #333;
 }
 
-.login-form input {
+.container .form input {
     width: 100%;
     padding: 0.8rem;
     margin: 0.5rem 0;
@@ -35,15 +36,16 @@ body {
     font-size: 1rem;
 }
 
-.login-form input:focus {
+.container .form input:focus {
     outline: none;
     background-color: #ccc;
 }
 
-.login-button {
+/* button styles */
+.container .form button {
     width: 100%;
     padding: 0.8rem;
-    margin-top: 5rem;
+    margin-top: 1.5rem;
     border: none;
     border-radius: 15px;
     background-color: grey;
@@ -53,22 +55,28 @@ body {
     transition: background-color 0.3s ease, transform 0.2s;
 }
 
-.login-button:hover {
+.container .form button:hover {
     background-color: darkgray;
     transform: translateY(-2px);
 }
 
-.signup-text {
+.container .form .signup-text {
     margin-top: 1rem;
     font-size: 0.9rem;
     color: #333;
 }
 
-.signup-text a {
+.container .form .signup-text a {
     color: #007bff;
     text-decoration: none;
 }
 
-.signup-text a:hover {
+.container .form .signup-text a:hover {
     text-decoration: underline;
+}
+
+.container .form .error-message {
+    color: red;
+    display: none;
+    margin-top: 1rem;
 }

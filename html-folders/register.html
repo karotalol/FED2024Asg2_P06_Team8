@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../css-folders/login-style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form id="register-form" class="form" onsubmit="handleRegister(event)">
+            <input type="text" id="username" name="username" placeholder="Choose a username..." required>
+            <input type="date" id="birthday" name="birthday" placeholder="Enter your birthday..." required>
+            <input type="password" id="password" name="password" placeholder="Enter your password..." required minlength="8">
+            <button type="submit" class="register-button">Register</button>
+        </form>
+        <p class="signup-text">
+            Already have an account? <a href="../html-folders/login.html">Log in</a>
+        </p>
+        <p id="username-error" class="error-message">Username already taken. Please choose another.</p>
+    </div>
+
+    <script src="../js-folders/script.js"></script>
+</body>
+</html>
