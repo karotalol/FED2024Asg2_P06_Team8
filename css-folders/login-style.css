@@ -26,6 +26,12 @@ body {
     color: #333;
 }
 
+
+label {
+    font-size: 1.2rem;
+    color: #333;
+}
+
 .container .form input {
     width: 100%;
     padding: 0.8rem;
