@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Template</title>
+    <title>Profile - MokeSell</title>
     <link rel="stylesheet" href="../css-folders/style.css">
+    <link rel="stylesheet" href="../css-folders/profile-style.css">
 </head>
 <body>
     <header>
@@ -25,20 +26,26 @@
                 <li><a href="../html-folders/profile.html" class="icon-button">👤</a></li>
                 <li><a href="../html-folders/settings.html" class="icon-button">⚙</a></li>
                 <li><a href="../html-folders/login.html" class="nav-login-button">Login</a></li>
-                <li><a href="..html-folders/register.html" class="nav-register-button">Register</a></li>
+                <li><a href="../html-folders/register.html" class="nav-register-button">Register</a></li>
             </ul>
         </nav>
-        <div class="offcanvas-menu">
-            <ul>
-                <li><a href="../index.html">🏠 Homepage</a></li>
-                <li><a href="../html-folders/profile.html">👤 Profile</a></li>
-                <li><a href="../html-folders/messages.html">💬 Messages</a></li>
-                <li><a href="../html-folders/following.html">🧑‍🤝‍🧑 Following</a></li>
-                <li><a href="../html-folders/cart.html">🛒 Cart</a></li>
-                <li><a href="../html-folders/listing.html">💹 Listing</a></li>
-            </ul>
-        </div>
     </header>
+
+    <section class="profile-container">
+        <div class="profile-header">
+            <div class="profile-picture"></div>
+            <div class="profile-info">
+                <h1 id="profile-username">Guest</h1>
+                <p>Listing: 12 | Followers: 20 | Following: 18</p>
+                <button class="follow-button">Follow</button>
+            </div>
+        </div>
+        <h3>Description</h3>
+        <div class="description-text"></div>
+        <p>this is a description for the user's profile.</p>
+
+
+    </section>
 
     <script src="../js-folders/script.js"></script>
 </body>
