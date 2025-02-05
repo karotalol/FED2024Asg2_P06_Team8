@@ -152,7 +152,7 @@ nav ul li a:hover {
 
 
 /* login button styles */
-.nav-login-button, .nav-register-button {
+.nav-login-button, .nav-register-button, .nav-logout-button {
     font-family: 'Raleway', sans-serif;
     text-decoration: none;
     color: #fff;
@@ -166,10 +166,19 @@ nav ul li a:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-.nav-login-button:hover {
+.nav-login-button:hover, .nav-register-button:hover, .nav-logout-button:hover {
     background-color: darkgrey; 
     transform: translateY(-2px); 
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-logout-button {
+    background-color: #ff4d4d; 
+    color: white;
+}
+
+.nav-logout-button:hover {
+    background-color: #e60000; 
 }
 
 
