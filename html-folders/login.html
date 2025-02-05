@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../css-folders/login-style.css">
-    <script src = "loginpage.js"></script>
+    <script src="loginpage.js" defer></script> <!-- Ensure script is deferred -->
 </head>
 <body>
     <div class="container">
         <h1>Login</h1>
-        <form action="../index.html" method="POST" class="form">
-            <input type="email" name="email" placeholder="Enter your email..." required>
-            <input type="password" name="password" placeholder="Enter your password..." required minlength="8">
-            <button type="submit" class="login-button" id = "loginsubmit">Log In</button>
+        <form id="login-form" class="form">
+            <input type="email" id="email" name="email" placeholder="Enter your email..." required>
+            <input type="password" id="password" name="password" placeholder="Enter your password..." required minlength="8">
+            <button type="submit" class="login-button" id="loginsubmit">Log In</button>
         </form>
         <p class="signup-text">
             Don't have an account? <a href="../html-folders/register.html">Sign up</a>
         </p>
         <p id="login-msg" style="color: red; display: none;">Invalid email or password</p> <!-- Error message -->
     </div>
-    <script src="js-folders/script.js"></script>
+    <script src="../js-folders/script.js"></script>
 </body>
 </html>
