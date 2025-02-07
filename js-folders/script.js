@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginButton = document.getElementById("login-button");
     const registerButton = document.getElementById("register-button");
 
-    const logoutButton = document.getElementById("logout-button");
 
     offcanvasToggle.addEventListener('click', () => {
         offcanvasMenu.classList.toggle('active');
@@ -54,61 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // change image every 3 seconds
     setInterval(nextImage, 3000);
 
-    // show search suggestions as cards below the search bar
-    function showSearchSuggestions(query) {
-        if (!query) {
-            searchSuggestions.innerHTML = '';
-            searchSuggestions.classList.remove('active');
-            return;
-        }
-
-        const suggestions = [
-            { title: 'Product 1', image: 'path-to-image1.jpg' },
-            { title: 'Product 2', image: 'path-to-image2.jpg' },
-            { title: 'Product 3', image: 'path-to-image3.jpg' },
-        ];
-
-        const filteredSuggestions = suggestions.filter(suggestion =>
-            suggestion.title.toLowerCase().includes(query.toLowerCase())
-        );
-
-        searchSuggestions.innerHTML = '';
-
-        if (filteredSuggestions.length > 0) {
-            searchSuggestions.classList.add('active');
-            filteredSuggestions.forEach(suggestion => {
-                const suggestionCard = document.createElement('div');
-                suggestionCard.classList.add('suggestion-card');
-                suggestionCard.innerHTML = `
-                    <img src="${suggestion.image}" alt="${suggestion.title}" class="suggestion-img">
-                    <p>${suggestion.title}</p>
-                `;
-                suggestionCard.addEventListener('click', () => {
-                    searchBar.value = suggestion.title;
-                    searchSuggestions.innerHTML = '';
-                    searchSuggestions.classList.remove('active');
-                    fetchProducts(suggestion.title);
-                });
-                searchSuggestions.appendChild(suggestionCard);
-            });
-        } else {
-            searchSuggestions.innerHTML = '<p>No suggestions found</p>';
-        }
-    }
-
-    // search function
-    searchBar.addEventListener('input', (event) => {
-        const query = event.target.value.trim();
-        showSearchSuggestions(query);
-    });
-
-    body.addEventListener('click', (event) => {
-        if (!searchSuggestions.contains(event.target) && event.target !== searchBar) {
-            searchSuggestions.innerHTML = '';
-            searchSuggestions.classList.remove('active');
-        }
-    });
-
     // display username from localstorage for welcome message
     function updateWelcomeMessage() {
         const username = localStorage.getItem("username");
@@ -121,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
             loginButton.style.display = "none";
             registerButton.style.display = "none";
 
-            logoutButton.style.display = "block";
         } else {
             // guest message if not logged in
             welcomeNavbar.style.display = "none";
@@ -131,19 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             loginButton.style.display = "block";
             registerButton.style.display = "block";
-
-            logoutButton.style.display = "none";
         }
     }
 
     updateWelcomeMessage();
-
-    logoutButton.addEventListener('click', () => {
-        localStorage.removeItem("username");
-
-        window.location.href = "../html-folders/login.html";
-    });
-
 });
 
 
