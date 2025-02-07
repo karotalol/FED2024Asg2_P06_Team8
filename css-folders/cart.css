@@ -40,6 +40,7 @@ nav ul {
 }
 
 .nav-links li {
+    font-family: 'Raleway', sans-serif;
     margin-right: 10px;
 }
 
@@ -182,6 +183,25 @@ nav ul li a:hover {
     background-color: #e60000; 
 }
 
+
+/* carousel */
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.carousel-image {
+    display: none;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-image:first-child {
+    display: block;
+}
+
 .notification-container {
     position: relative;
 }
@@ -262,88 +282,101 @@ nav ul li a:hover {
     left: 0;
 }
 
-
-.profile-container {
-    margin: 20px;
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    align-self: center; 
+    object-fit: cover;
 }
 
-.profile-header {
+.card-registration {
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    border-radius: 15px;
+}
+
+/* Cart Layout */
+.row.g-0 {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* Left Side - Product List */
+.col-lg-8 {
+    width: 65%;
+    padding: 20px;
+}
+
+.cart-item {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    background: white;
+    transition: background 0.3s ease-in-out;
 }
 
-.profile-header .profile-picture {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #ddd;
-    margin-right: 20px;
+.cart-item:hover {
+    background: #f9f9f9;
 }
 
-.profile-header .profile-info {
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.cart-details {
+    flex-grow: 1;
+    padding-left: 15px;
+}
+
+.cart-quantity {
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
-.profile-header .profile-info h1 {
-    margin: 0;
-    font-size: 24px;
+.cart-quantity input {
+    width: 50px;
+    text-align: center;
+}
+
+.cart-price {
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding-left: 20px;
+}
+
+.cart-remove a {
+    color: red;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.cart-remove a:hover {
+    color: darkred;
+}
+
+/* Right Side - Checkout Summary */
+.col-lg-4 {
+    width: 35%;
+    background-color: #fafafa;
+    padding: 30px;
+    border-radius: 0 15px 15px 0;
+}
+
+.summary-section h3 {
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-.profile-header .profile-info p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-.follow-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.follow-button:hover {
-    background-color: #0056b3;
-}
-
-.profile-tabs {
+.summary-details {
     display: flex;
-    margin-top: 20px;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 1.1rem;
 }
 
-.profile-tabs a {
-    margin-right: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #333;
-}
-.description-text {
-    margin-right: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #333;
-}
-
-.profile-tabs a:hover {
-    color: #007bff;
-}
-
-.profile-feed {
-    margin-top: 20px;
-}
-
-.profile-feed h2 {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.profile-feed .activity {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-}
