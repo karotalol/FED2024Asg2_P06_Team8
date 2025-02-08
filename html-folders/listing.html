@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Template</title>
-    <link rel="stylesheet" href="../css-folders/style.css">
+    <title>Product Listing</title>
+    <link rel="stylesheet" href="../css-folders/listing.css">
 </head>
 <body>
     <header>
@@ -28,7 +28,10 @@
                 <li><a href="../html-folders/register.html" class="nav-register-button">Register</a></li>
             </ul>
         </nav>
+        <div id="welcome-navbar" class="welcome-message">Welcome, Guest</div>
+
         <div class="offcanvas-menu">
+            <div id="welcome-offcanvas" class="welcome-message">Welcome, Guest</div>
             <ul>
                 <li><a href="../index.html">🏠 Homepage</a></li>
                 <li><a href="../html-folders/profile.html">👤 Profile</a></li>
@@ -39,6 +42,12 @@
             </ul>
         </div>
     </header>
+
+    <main>
+        <div class="product-container" id="product-container">
+            <!-- Product cards will be dynamically inserted here -->
+        </div>
+    </main>
 
     <script src="../js-folders/script.js"></script>
 </body>

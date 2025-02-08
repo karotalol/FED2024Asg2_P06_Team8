@@ -44,47 +44,41 @@
     </header>
 
     <main class="container">
- 
-        <!-- Left Column / Headphones Image -->
+        <!-- Left Column / Product Images -->
         <div class="left-column">
-          <img data-image="black" src="../images/black beats.jpg" alt="">
-          <img data-image="blue" src="../images/blue beats.jpg" alt="">
-          <img data-image="red" class="active" src="../images/red beats.jpg" alt="">
+            <img data-image="black" src="../images/default.jpg" alt="" id="product-image">
+            <!-- You can add more images dynamically later -->
         </div>
-       
        
         <!-- Right Column -->
         <div class="right-column">
-       
-          <!-- Product Description -->
-          <div class="product-description">
-            <span>Headphones</span>
-            <h1>Beats EP</h1>
-            <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
-          </div>
-       
-          <!-- Product Configuration -->
-          <div class="product-configuration">
-       
-       
-            <!-- Cable Configuration -->
-            <div class="cable-config">
-              <span>Cable configuration</span>
-       
-              <div class="cable-choose">
-                <button>Straight</button>
-                <button>Coiled</button>
-                <button>Long-coiled</button>
-              </div>
+            <!-- Product Description -->
+            <div class="product-description">
+                <span id="product-category">Category</span>
+                <h1 id="product-title">Product Title</h1>
+                <p id="product-description">Product description goes here.</p>
             </div>
-          </div>
        
-          <!-- Product Pricing -->
-          <div class="product-price">
-            <span>148$</span>
-            <a href="#" class="cart-btn">Add to cart</a>
-          </div>
+            <!-- Product Configuration -->
+            <div class="product-configuration">
+                <div class="cable-config">
+                    <span>Cable configuration</span>
+                    <div class="cable-choose">
+                        <button>Straight</button>
+                        <button>Coiled</button>
+                        <button>Long-coiled</button>
+                    </div>
+                </div>
+            </div>
+       
+            <!-- Product Pricing -->
+            <div class="product-price">
+                <span id="product-price">$ Price</span>
+                <a href="#" class="cart-btn">Add to cart</a>
+            </div>
         </div>
-      </main>
-      </body>
-      </html>
+    </main>
+    
+    <script src="../js-folders/script.js"></script>
+</body>
+</html>
