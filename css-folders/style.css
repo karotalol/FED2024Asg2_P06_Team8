@@ -11,11 +11,12 @@ body {
     font-family: 'Raleway', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #ECF0F1;
+    background-color: #ECF0F1 !important; 
 }
 
 /* header and navbar */
 header {
+    width: 100%;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -385,4 +386,13 @@ nav ul li a:hover {
     display:flex;
     align-items: right;
     justify-content: right;
+}
+
+.icon-hover:hover {
+  border-color: #3b71ca !important;
+  background-color: white !important;
+}
+
+.icon-hover:hover i {
+  color: #3b71ca !important;
 }
