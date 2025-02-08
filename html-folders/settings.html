@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MokeSell</title>
     <link rel="stylesheet" href="../css-folders/style.css">
-    <script src="../js-folders/script.js"></script>
+    <script src="../js-folders/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -44,24 +44,25 @@
     </header>
     <div class="profile-wrapper">
         <div class="profile-container">
-        <h2>Edit Profile</h2>
-        <p class="section-title">Public Profile</p>
-        
-        <form class= "profile-form">
-            <label for = "username"><b>Username</b></label>
-            <input type ="text" id = "username" name = "username">
+            <h2>Edit Profile</h2>
+            <p class="section-title">Public Profile</p>
+            
+            <form class="profile-form">
+                <label for="username"><b>Username</b></label>
+                <input type="text" id="username" name="username" value="">
 
-            <label for = "first-name"><b>First name</b></label>
-            <input type = "text" id = "first-name" name = "first-name">
+                <label for="first-name"><b>First name</b></label>
+                <input type="text" id="first-name" name="first-name" value="">
 
-            <label for = "last-name"><b>Last name</b></label>
-            <input type = "text" id = "last-name" name = "last-name">
+                <label for="last-name"><b>Last name</b></label>
+                <input type="text" id="last-name" name="last-name" value="">
 
-            <label for = "bio"><b>Bio</b></label>
-            <input type = "text" id = "bio" name = "bio">
-        </form>
-            <div class = "button-for-login">
-            <a href="../html-folders/settings.html" class="nav-login-button">Confirm changes</a>
+                <label for="bio"><b>Description</b></label>
+                <input type="text" id="bio" name="bio">
+            </form>
+
+            <div class="button-for-login">
+                <button id="save-changes" class="nav-login-button">Confirm changes</button>
             </div>
         </div>
     </div>

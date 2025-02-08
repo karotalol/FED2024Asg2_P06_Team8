@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile - MokeSell</title>
-    <link rel="stylesheet" href="../css-folders/profile-style.css">
+    <link rel="stylesheet" href="../css-folders/profile.css">
 </head>
 <body>
     <header>
@@ -28,6 +28,9 @@
                 <li><a href="../html-folders/register.html" class="nav-register-button">Register</a></li>
             </ul>
         </nav>
+        
+        <div id="welcome-navbar" class="welcome-message">Welcome, Guest</div>
+
         <div class="offcanvas-menu">
             <ul>
                 <li><a href="../index.html">🏠 Homepage</a></li>
@@ -41,19 +44,40 @@
     </header>
 
     <section class="profile-container">
-        <div class="profile-header">
-            <div class="profile-picture"></div>
-            <div class="profile-info">
-                <h1 id="profile-username">Guest</h1>
-                <p>Listing: 12 | Followers: 20 | Following: 18</p>
-                <button class="follow-button">Follow</button>
+        <div class="profile-box">
+            <div class="profile-info-container">
+                <div class="profile-header">
+                    <div class="profile-picture">
+                        <img src="images/profilepfp.jpg" alt="Profile Picture" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h1 id="profile-username">Guest</h1>
+                        <p id="profile-name">
+                            <span id="profile-firstname">First Name</span>
+                            <span id="profile-lastname">Last Name</span>
+                        </p>
+                        <p id="profile-follow-info">Listing: 12 | Followers: 20 | Following: 18</p>
+                        <button class="follow-button">Follow</button>
+                    </div>
+                </div>
+                <a href="../html-folders/settings.html">
+                    <button class="edit-profile-button">Edit Profile</button>
+                </a>
+            </div>
+
+            <h3>Description</h3>
+            <div class="description-container">
+                <div class="description-text">
+                    <p><strong>About Me</strong></p>
+                    <p id="profile-bio">Hi, I'm Alex, an active member of MokeSell. I buy and sell a variety of products, from electronics to vintage items. I love discovering great deals and connecting with other users.</p>
+                </div>
+            </div>            
+
+            <h3>Listing</h3>
+            <div class="listing-container">
+                <p>This is where the user's listings will go.</p>
             </div>
         </div>
-        <h3>Description</h3>
-        <div class="description-text"></div>
-        <p>this is a description for the user's profile.</p>
-
-
     </section>
 
     <script src="../js-folders/script.js"></script>

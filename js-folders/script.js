@@ -211,3 +211,61 @@ function checkPromo() {
         }
     });
 }
+
+/* settings.html */
+window.addEventListener('DOMContentLoaded', (event) => {
+    const usernameInput = document.getElementById('username');
+    const firstNameInput = document.getElementById('first-name');
+    const lastNameInput = document.getElementById('last-name');
+    const bioInput = document.getElementById('bio');
+
+    if (localStorage.getItem('username')) {
+        usernameInput.value = localStorage.getItem('username');
+    }
+    if (localStorage.getItem('firstName')) {
+        firstNameInput.value = localStorage.getItem('firstName');
+    }
+    if (localStorage.getItem('lastName')) {
+        lastNameInput.value = localStorage.getItem('lastName');
+    }
+    if (localStorage.getItem('bio')) {
+        bioInput.value = localStorage.getItem('bio');
+    }
+
+    const saveButton = document.getElementById('save-changes');
+    if (saveButton) {
+        saveButton.addEventListener('click', (e) => {
+            e.preventDefault();  
+            
+            localStorage.setItem('username', usernameInput.value);
+            localStorage.setItem('firstName', firstNameInput.value);
+            localStorage.setItem('lastName', lastNameInput.value);
+            localStorage.setItem('bio', bioInput.value);
+
+            alert('Profile updated successfully!');
+
+            window.location.href = '../html-folders/profile.html';
+        });
+    }
+});
+
+// load profile data from localstorage
+window.addEventListener('DOMContentLoaded', (event) => {
+    const profileUsername = document.getElementById('profile-username');
+    const profileFirstname = document.getElementById('profile-firstname');
+    const profileLastname = document.getElementById('profile-lastname');
+    const profileBio = document.querySelector('.description-text p:nth-child(1)');
+
+    if (localStorage.getItem('username')) {
+        profileUsername.textContent = localStorage.getItem('username');
+    }
+    if (localStorage.getItem('firstName')) {
+        profileFirstname.textContent = localStorage.getItem('firstName');
+    }
+    if (localStorage.getItem('lastName')) {
+        profileLastname.textContent = localStorage.getItem('lastName');
+    }
+    if (localStorage.getItem('bio')) {
+        profileBio.textContent = localStorage.getItem('bio');
+    }
+});
