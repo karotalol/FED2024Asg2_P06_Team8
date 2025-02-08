@@ -294,11 +294,11 @@ html, body {
 
 /* Left Column */
 .left-column img {
-    width: 100%;
+    width: 50%;
     position: absolute;
     right: 50px;
     top: 0;
-    opacity: 0;
+    opacity: 1; 
     transition: all 0.3s ease;
 }
    
