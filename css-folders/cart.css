@@ -16,6 +16,9 @@ body {
 
 /* header and navbar */
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background: #2C3E50;
     color: #fff;
     padding: 1rem;
@@ -181,25 +184,6 @@ nav ul li a:hover {
 
 .nav-logout-button:hover {
     background-color: #e60000; 
-}
-
-
-/* carousel */
-.carousel {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.carousel-image {
-    display: none;
-    width: 100%;
-    border-radius: 10px;
-}
-
-.carousel-image:first-child {
-    display: block;
 }
 
 .notification-container {

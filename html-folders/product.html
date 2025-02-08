@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MokeSell</title>
+    <link rel="stylesheet" href="../css-folders/product.css">
+    <script src="../js-folders/script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><button class="offcanvas-toggle" aria-label="Toggle Navigation">☰</button></li>
+                <li><h1 class="site-title">MokeSell</h1></li>
+                <li><a href="../index.html">Homepage</a></li>
+                <li><a href="../html-folders/wishlist.html">Wishlist</a></li>
+                <li><a href="../html-folders/listing.html">Listing</a></li>
+                <li><input type="text" placeholder="Search for an item..." class="search-bar" id="search-bar"></li>
+                <li><div id="search-suggestions" class="search-suggestions"></div></li>
+                <li class="notification-container">
+                    <button class="icon-button notification-button" title="Notifications">🔔</button>
+                    <div class="notification-box">
+                        <p>No new notifications.</p>
+                    </div>
+                </li>
+                <li><a href="../html-folders/cart.html" class="icon-button">🛒</a></li>
+                <li><a href="../html-folders/profile.html" class="icon-button">👤</a></li>
+                <li><a href="../html-folders/settings.html" class="icon-button">⚙</a></li>
+                <li><a href="../html-folders/login.html" class="nav-login-button">Login</a></li>
+                <li><a href="../html-folders/register.html" class="nav-register-button">Register</a></li>
+            </ul>
+        </nav>
+        <div class="offcanvas-menu">
+            <ul>
+                <li><a href="../index.html">🏠 Homepage</a></li>
+                <li><a href="../html-folders/profile.html">👤 Profile</a></li>
+                <li><a href="../html-folders/messages.html">💬 Messages</a></li>
+                <li><a href="../html-folders/following.html">🧑‍🤝‍🧑 Following</a></li>
+                <li><a href="../html-folders/cart.html">🛒 Shopping Cart</a></li>
+                <li><a href="../html-folders/listing.html">💹 Listing</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+ 
+        <!-- Left Column / Headphones Image -->
+        <div class="left-column">
+          <img data-image="black" src="../images/black beats.jpg" alt="">
+          <img data-image="blue" src="../images/blue beats.jpg" alt="">
+          <img data-image="red" class="active" src="../images/red beats.jpg" alt="">
+        </div>
+       
+       
+        <!-- Right Column -->
+        <div class="right-column">
+       
+          <!-- Product Description -->
+          <div class="product-description">
+            <span>Headphones</span>
+            <h1>Beats EP</h1>
+            <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
+          </div>
+       
+          <!-- Product Configuration -->
+          <div class="product-configuration">
+       
+       
+            <!-- Cable Configuration -->
+            <div class="cable-config">
+              <span>Cable configuration</span>
+       
+              <div class="cable-choose">
+                <button>Straight</button>
+                <button>Coiled</button>
+                <button>Long-coiled</button>
+              </div>
+            </div>
+          </div>
+       
+          <!-- Product Pricing -->
+          <div class="product-price">
+            <span>148$</span>
+            <a href="#" class="cart-btn">Add to cart</a>
+          </div>
+        </div>
+      </main>
+      </body>
+      </html>
