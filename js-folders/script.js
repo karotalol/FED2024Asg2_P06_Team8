@@ -191,3 +191,23 @@ document.addEventListener('DOMContentLoaded', () => {
         profileUsername.textContent = "Guest";
     }
 });
+
+/* cart promo code */
+function checkPromo() {
+    let promoCode = document.getElementById("promoInput").value;
+    let message = document.getElementById("message");
+
+    if (promoCode.toLowerCase() === "hello") {
+        message.innerHTML = "✅ Promo applied! You get a 20% discount.";
+        message.style.color = "green";
+    } else {
+        message.innerHTML = "❌ Invalid promo code. Try again.";
+        message.style.color = "red";
+    }
+
+    document.getElementById("promoInput").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            checkPromo();
+        }
+    });
+}

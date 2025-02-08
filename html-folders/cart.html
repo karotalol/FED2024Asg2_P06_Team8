@@ -185,25 +185,24 @@
                             <option value="2">Express Delivery $5.00</option>
                           </select>
                         </div>
-      
+                        <div class="container mt-5">
                         <h5 class="text-uppercase mb-3"><b>Promo Code</b></h5>
       
                         <div class="mb-5">
-                          <div data-mdb-input-init class="form-outline">
-                            <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Examplea2">Enter your code</label>
+                          <div class="form-outline">
+                              <input type="text" id="promoInput" class="form-control form-control-lg" />
+                              <label class="form-label" for="promoInput">Enter your code</label>
+                              <p id="message"></p>
                           </div>
+                      </div>
+                      <h5>Original Price: <span id="originalPrice">$133.00</span></h5>
+    <h5>Discounted Price: <span id="discountedPrice">$133.00</span></h5>
+</div>
+
                         </div>
       
-                        <hr class="my-4">
-      
-                        <div class="d-flex justify-content-between mb-5">
-                          <h5 class="text-uppercase">Total price</h5>
-                          <h5>€ 137.00</h5>
-                        </div>
-      
-                        <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg"
-                          data-mdb-ripple-color="dark">Checkout</button>
+                        <a href = "../html-folders/checkout.html" class="btn btn-dark btn-block btn-lg"
+                          data-mdb-ripple-color="dark">Checkout</a>
       
                       </div>
                     </div>
@@ -214,5 +213,31 @@
           </div>
         </div>
       </section>
+      <script>
+        function checkPromo() {
+            let promoCode = document.getElementById("promoInput").value.trim();
+            let message = document.getElementById("message");
+            let originalPrice = 133.00; // Base price
+            let discountedPriceElement = document.getElementById("discountedPrice");
+    
+            if (promoCode.toLowerCase() === "hello") {
+                let discountPrice = originalPrice * 0.8; // 20% discount
+                message.innerHTML = "✅ Promo applied! You get a 20% discount.";
+                message.style.color = "green";
+                discountedPriceElement.innerHTML = `$${discountPrice.toFixed(2)}`;
+            } else {
+                message.innerHTML = "❌ Invalid promo code. Try again.";
+                message.style.color = "red";
+                discountedPriceElement.innerHTML = `$${originalPrice.toFixed(2)}`; // Reset price
+            }
+        }
+    
+        // Trigger on Enter key press
+        document.getElementById("promoInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                checkPromo();
+            }
+        });
+    </script>
 </body>
 </html>
