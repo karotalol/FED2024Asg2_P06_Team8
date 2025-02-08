@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MokeSell</title>
+    <title>MokeSell - Product</title>
     <link rel="stylesheet" href="../css-folders/product.css">
-    <script src="../js-folders/script.js"></script>
+    <script src="../js-folders/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -31,7 +31,10 @@
                 <li><a href="../html-folders/register.html" class="nav-register-button">Register</a></li>
             </ul>
         </nav>
+        <div id="welcome-navbar" class="welcome-message">Welcome, Guest</div>
+
         <div class="offcanvas-menu">
+          <div id="welcome-offcanvas" class="welcome-message">Welcome, Guest</div>
             <ul>
                 <li><a href="../index.html">🏠 Homepage</a></li>
                 <li><a href="../html-folders/profile.html">👤 Profile</a></li>
@@ -46,10 +49,9 @@
     <main class="container">
         <!-- Left Column / Product Images -->
         <div class="left-column">
-            <img data-image="black" src="../images/default.jpg" alt="" id="product-image">
-            <!-- You can add more images dynamically later -->
-        </div>
-       
+          <img id="product-image" src="../images/default.jpg" alt="Product Image">
+      </div>
+           
         <!-- Right Column -->
         <div class="right-column">
             <!-- Product Description -->
@@ -58,19 +60,7 @@
                 <h1 id="product-title">Product Title</h1>
                 <p id="product-description">Product description goes here.</p>
             </div>
-       
-            <!-- Product Configuration -->
-            <div class="product-configuration">
-                <div class="cable-config">
-                    <span>Cable configuration</span>
-                    <div class="cable-choose">
-                        <button>Straight</button>
-                        <button>Coiled</button>
-                        <button>Long-coiled</button>
-                    </div>
-                </div>
-            </div>
-       
+
             <!-- Product Pricing -->
             <div class="product-price">
                 <span id="product-price">$ Price</span>
@@ -78,7 +68,5 @@
             </div>
         </div>
     </main>
-    
-    <script src="../js-folders/script.js"></script>
 </body>
 </html>

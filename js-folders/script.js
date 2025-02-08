@@ -269,3 +269,62 @@ window.addEventListener('DOMContentLoaded', (event) => {
         profileBio.textContent = localStorage.getItem('bio');
     }
 });
+
+const apiUrl = 'https://fakestoreapi.com/products';
+
+function fetchProducts() {
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(products => {
+            const productContainer = document.getElementById('product-container');
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.classList.add('product-card');
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.title}" class="product-image">
+                    <h2 class="product-name">${product.title}</h2>
+                    <p class="product-price">$${product.price}</p>
+                    <a href="product.html?id=${product.id}" class="view-product-btn">View Product</a>
+                `;
+                productContainer.appendChild(productCard);
+            });
+        })
+        .catch(error => console.error('Error fetching products:', error));
+}
+
+fetchProducts();
+
+function getProductId() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id');
+}
+
+function fetchProductDetails(productId) {
+    const apiUrl = `https://fakestoreapi.com/products/${productId}`;
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Product not found');
+            }
+            return response.json();
+        })
+        .then(product => {
+            document.getElementById('product-category').textContent = product.category;
+            document.getElementById('product-title').textContent = product.title;
+            document.getElementById('product-description').textContent = product.description;
+            document.getElementById('product-price').textContent = `$${product.price}`;
+            document.getElementById('product-image').src = product.image; 
+            document.getElementById('product-image').alt = product.title; 
+        })
+        .catch(error => {
+            console.error('Error fetching product data:', error);
+            alert(error.message);
+        });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const productId = getProductId();
+    if (productId) {
+        fetchProductDetails(productId);
+    }
+});
