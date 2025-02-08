@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MokeSell</title>
+    <link rel="stylesheet" href="../css-folders/checkout.css">
+    <script src="../js-folders/script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><button class="offcanvas-toggle" aria-label="Toggle Navigation">☰</button></li>
+                <li><h1 class="site-title"><b>MokeSell</b></h1></li>
+                <li><a href="../index.html">Homepage</a></li>
+                <li><a href="../html-folders/wishlist.html">Wishlist</a></li>
+                <li><a href="../html-folders/listing.html">Listing</a></li>
+                <li><input type="text" placeholder="Search for an item..." class="search-bar" id="search-bar"></li>
+                <li><div id="search-suggestions" class="search-suggestions"></div></li>
+                <li class="notification-container">
+                    <button class="icon-button notification-button" title="Notifications">🔔</button>
+                    <div class="notification-box">
+                        <p>No new notifications.</p>
+                    </div>
+                </li>
+                <li><a href="../html-folders/cart.html" class="icon-button">🛒</a></li>
+                <li><a href="../html-folders/profile.html" class="icon-button">👤</a></li>
+                <li><a href="../html-folders/settings.html" class="icon-button">⚙</a></li>
+                <li><a href="../html-folders/login.html" class="nav-login-button" id="login-button">Login</a></li>
+                <li><a href="../html-folders/register.html" class="nav-register-button" id="register-button">Register</a></li>
+            </ul>
+        </nav>
+
+        <div id="welcome-navbar" class="welcome-message">Welcome, Guest</div>
+
+        <div class="offcanvas-menu">
+            <div id="welcome-offcanvas" class="welcome-message">Welcome, Guest</div>
+            <ul>
+                <li><a href="../index.html">🏠 Homepage</a></li>
+                <li><a href="../html-folders/profile.html">👤 Profile</a></li>
+                <li><a href="../html-folders/messages.html">💬 Messages</a></li>
+                <li><a href="../html-folders/following.html">🧑‍🤝‍🧑 Following</a></li>
+                <li><a href="../html-folders/cart.html">🛒 Shopping Cart</a></li>
+                <li><a href="../html-folders/listing.html">💹 Listing</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <div class="container">
+            <form action="">
+                <h1>
+                    <i class="fas fa-shipping-fast"></i>
+                    Shipping Details
+                </h1>
+                <div class="name">
+                    <div>
+                        <label for="f-name">First</label>
+                        <input type="text" name="f-name">
+                    </div>
+                    <div>
+                        <label for="l-name">Last</label>
+                        <input type="text" name="l-name">
+                    </div>
+                </div>
+                <div class="street">
+                    <label for="name">Street</label>
+                    <input type="text" name="address">
+                </div>
+                <div class="address-info">
+                    <div>
+                        <label for="city">City</label>
+                        <input type="text" name="city">
+                    </div>
+                    <div>
+                        <label for="state">State</label>
+                        <input type="text" name="state">
+                    </div>
+                    <div>
+                        <label for="zip">Zip</label>
+                        <input type="text" name="zip">
+                    </div>
+                </div>
+                <h1>
+                    <i class="far fa-credit-card"></i> Payment Information
+                </h1>
+                <div class="cc-num">
+                    <label for="card-num">Credit Card No.</label>
+                    <input type="text" name="card-num">
+                </div>
+                <div class="cc-info">
+                    <div>
+                        <label for="card-num">Exp</label>
+                        <input type="text" name="expire">
+                    </div>
+                    <div>
+                        <label for="card-num">CCV</label>
+                        <input type="text" name="security">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a href="../html-folders/purchasecomplete.html">Purchase</button>
+                    <a href="../html-folders/cart.html">Back to Cart</a>
+                </div>
+            </form>
+        </div>
+    </div>
+  </body>
+  </html>
