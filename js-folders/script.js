@@ -406,3 +406,65 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("add-listing-form");
+    
+    if (form) {
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const imageInput = document.getElementById("image-upload");
+            const category = document.getElementById("category").value;
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const price = document.getElementById("price").value;
+
+            if (imageInput.files.length === 0) {
+                alert("Please upload an image.");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const imageUrl = e.target.result;
+
+                const newListing = {
+                    image: imageUrl,
+                    category: category,
+                    title: title,
+                    description: description,
+                    price: price
+                };
+
+                let listings = JSON.parse(localStorage.getItem("listings")) || [];
+                listings.push(newListing);
+                localStorage.setItem("listings", JSON.stringify(listings));
+
+                alert("Listing added successfully!");
+                window.location.href = "../html-folders/listing.html";
+            };
+
+            reader.readAsDataURL(imageInput.files[0]);
+        });
+    }
+
+    const productContainer = document.getElementById("product-container");
+    if (productContainer) {
+        const listings = JSON.parse(localStorage.getItem("listings")) || [];
+
+        listings.forEach((listing) => {
+            const productCard = document.createElement("div");
+            productCard.classList.add("product-card");
+
+            productCard.innerHTML = `
+                <img src="${listing.image}" class="product-image" alt="Product Image">
+                <div class="product-name">${listing.title}</div>
+                <div class="product-price">$${listing.price}</div>
+                <a href="#" class="view-product-btn">View</a>
+            `;
+
+            productContainer.appendChild(productCard);
+        });
+    }
+});
+
