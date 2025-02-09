@@ -57,8 +57,12 @@
         function endGame(win) {
             gameEnded = true;
             document.body.innerHTML = win ? 
-                '<h1>You won! Enter "hello" in the Promo Code in your next purchase to get 20% off!</h1><a href="../index.html">Back to Home Page</a>' :
-                '<h1>Sorry you lost.</h1><a href="../index.html">Back to Home Page</a>';
+                '<h1>You won! Enter "hello" in the Promo Code in your next purchase to get 20% off!</h1><a id="back-link">Back to Home Page</a>' :
+                '<h1>Sorry you lost.</h1><a id="back-link">Click to go back to Home Page</a>';
+
+document.getElementById("back-link").onclick = function() {
+    window.location.href = "../index.html";
+};
         }
         
         function spawnTinyImage() {
