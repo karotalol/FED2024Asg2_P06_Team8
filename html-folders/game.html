@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Tiny Image</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            background-color: #f0f0f0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .tiny-img {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .coin-counter, .timer, .exit-btn {
+            position: absolute;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .coin-counter { top: 10px; left: 10px; }
+        .timer { top: 10px; right: 10px; }
+        .exit-btn {
+            position:fixed;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p class="message">Get 30 coins in 2 minutes to get a DISCOUNT for your next purchase!</p>
+    <div class="coin-counter">Coins: <span id="coins">0</span></div>
+    <div class="timer">Time Left: <span id="timer">90</span> sec</div>
+    <button class="exit-btn" onclick="exitGame()">Exit</button>
+    <script>
+        let coins = 0;
+        let timeLeft = 90;
+        let gameEnded = false;
+
+        function endGame(win) {
+            gameEnded = true;
+            document.body.innerHTML = win ? 
+                '<h1>You won! Enter "hello" in the Promo Code in your next purchase to get 20% off!</h1><a href="index.html">Back to Home Page</a>' :
+                '<h1>Sorry you lost.</h1><a href="index.html">Back to Home Page</a>';
+        }
+        
+        function spawnTinyImage() {
+            if (timeLeft <= 0 || gameEnded) return;
+            
+            const img = document.createElement("div");
+            img.classList.add("tiny-img");
+            
+            const screenWidth = document.documentElement.clientWidth;
+            const screenHeight = document.documentElement.clientHeight;
+            const safeMargin = 20;
+            
+            const x = Math.random() * (screenWidth - safeMargin);
+            const y = Math.random() * (screenHeight - safeMargin);
+            
+            img.style.left = `${x}px`;
+            img.style.top = `${y}px`;
+            
+            img.addEventListener("click", () => {
+                coins++;
+                document.getElementById("coins").innerText = coins;
+                img.remove();
+                
+                if (coins >= 30) {
+                    endGame(true);
+                } else {
+                    spawnTinyImage();
+                }
+            });
+            
+            document.body.appendChild(img);
+        }
+        
+        function startTimer() {
+            const timerElement = document.getElementById("timer");
+            const interval = setInterval(() => {
+                if (timeLeft <= 0 || gameEnded) {
+                    clearInterval(interval);
+                    if (!gameEnded) endGame(false);
+                    return;
+                }
+                timeLeft--;
+                timerElement.innerText = timeLeft;
+            }, 1000);
+        }
+
+        function exitGame() {
+            if (confirm("Are you sure you want to exit the game?")) {
+                window.location.href = "../index.html";
+            }
+        }
+        
+        spawnTinyImage();
+        startTimer();
+    </script>
+</body>
+</html>
