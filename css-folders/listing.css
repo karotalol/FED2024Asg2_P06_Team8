@@ -394,6 +394,25 @@ body {
     background-color: #005bb5;
 }
 
+.clear-all-btn {
+    background-color: #e60000; 
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    border: none; 
+    outline: none; 
+}
+
+.clear-all-btn:hover {
+    background-color: #b30000; 
+}
+
+
 footer {
     background: #2c3e50;
     color: #fff;

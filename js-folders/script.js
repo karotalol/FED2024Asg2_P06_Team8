@@ -286,8 +286,8 @@ function fetchProducts() {
 
 function displayProducts(products) {
     const productContainer = document.getElementById('product-container');
-    productContainer.innerHTML = ''; 
 
+    // if there are no products, display a message
     if (products.length === 0) {
         productContainer.innerHTML = "<p>No products found.</p>";
         return;
@@ -302,7 +302,7 @@ function displayProducts(products) {
             <p class="product-price">$${product.price}</p>
             <a href="product.html?id=${product.id}" class="view-product-btn">View Product</a>
         `;
-        productContainer.appendChild(productCard);
+        productContainer.appendChild(productCard); // append to container
     });
 }
 
@@ -393,7 +393,6 @@ document.addEventListener('DOMContentLoaded', function() {
         searchBar.addEventListener('input', searchProducts);
     }
 
-
     document.addEventListener('click', (event) => {
         if (!event.target.matches('.search-bar, .suggestion-item')) {
             document.getElementById('search-suggestions').style.display = 'none';
@@ -464,7 +463,18 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
 
             productContainer.appendChild(productCard);
+            
         });
     }
+        const clearAllBtn = document.getElementById("clear-all-btn");
+        if (clearAllBtn) {
+            clearAllBtn.addEventListener("click", function () {
+                localStorage.removeItem("listings");
+    
+                const productCards = document.querySelectorAll(".product-card");
+                productCards.forEach(card => card.remove());
+    
+                alert("All listings have been cleared.");
+            });
+        }
 });
-
