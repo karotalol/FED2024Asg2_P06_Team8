@@ -400,6 +400,7 @@ nav ul li a:hover {
   color: #3b71ca !important;
 }
 
+/* footer styles */
 footer {
     background: #2c3e50;
     color: #fff;
@@ -436,9 +437,9 @@ footer p a:hover {
     color: #ff7300;
 }
 
-/* Profile Picture Container */
+/* pfp container for profile.html */
 .profile-picture {
-    position: relative; /* Added to position elements inside this container */
+    position: relative; 
     width: 120px;
     height: 120px;
     border-radius: 50%;

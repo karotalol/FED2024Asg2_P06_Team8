@@ -1,4 +1,7 @@
+// wait for the DOM content to load before executing script
+
 document.addEventListener('DOMContentLoaded', () => {
+    // selecting important DOM elements for various functionalities
     const offcanvasToggle = document.querySelector('.offcanvas-toggle');
     const offcanvasMenu = document.querySelector('.offcanvas-menu');
     const images = document.querySelectorAll('.carousel-image');
@@ -19,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginButton = document.getElementById("login-button");
     const registerButton = document.getElementById("register-button");
 
-
+    // toggle the offcanvas menu on button click
     offcanvasToggle.addEventListener('click', () => {
         offcanvasMenu.classList.toggle('active');
     });
@@ -42,15 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
             img.style.display = i === index ? 'block' : 'none';
         });
     }
-
+    // move to next image in the carousel
     function nextImage() {
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
     }
 
+    // initialize carousel and show the first image
     showImage(currentIndex);
-
-    // change image every 3 seconds
     setInterval(nextImage, 3000);
 
     // display username from localstorage for welcome message
@@ -80,9 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
     updateWelcomeMessage();
 });
 
-
-const API_URL = "https://fedteam8assg2-c0be.restdb.io/rest/registerteam8"; // RestDB url
-const API_KEY = "67a32a852b46a6d1ffb90fc5"; // API key
+// rest db url and api key for handling registration
+const API_URL = "https://fedteam8assg2-c0be.restdb.io/rest/registerteam8"; // restdb url
+const API_KEY = "67a32a852b46a6d1ffb90fc5"; // api key
 
 // register form
 async function handleRegister(event) {
@@ -92,6 +94,7 @@ async function handleRegister(event) {
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
 
+    // validation
     if (!username || !email || !password) {
         alert("All fields are required.");
         return;
@@ -102,6 +105,7 @@ async function handleRegister(event) {
     }
 
     try {
+        // check if username or email already exists
         const checkResponse = await fetch(`${API_URL}?q={"$or":[{"username":"${username}"},{"email":"${email}"}]}`, {
             method: "GET",
             headers: { "Content-Type": "application/json", "x-apikey": API_KEY, "Cache-Control": "no-cache" }
@@ -115,6 +119,7 @@ async function handleRegister(event) {
             return;
         }
 
+        // create a new user
         const userData = { username, email, password };
         const response = await fetch(API_URL, {
             method: "POST",
@@ -143,13 +148,15 @@ async function handleLogin(event) {
 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
-
+    
+    // validation
     if (!email || !password) {
         alert("Both fields are required.");
         return;
     }
 
     try {
+        // check if user exists
         const checkResponse = await fetch(`${API_URL}?q={"email":"${email}","password":"${password}"}`, {
             method: "GET",
             headers: { "Content-Type": "application/json", "x-apikey": API_KEY, "Cache-Control": "no-cache" }
@@ -172,6 +179,7 @@ async function handleLogin(event) {
     }
 }
 
+// set event listeners on forms
 document.addEventListener("DOMContentLoaded", () => {
     const registerForm = document.getElementById("register-form");
     if (registerForm) registerForm.addEventListener("submit", handleRegister); 
@@ -180,6 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (loginForm) loginForm.addEventListener("submit", handleLogin); 
 });
 
+// load profile info from local storage when on profile page
 document.addEventListener('DOMContentLoaded', () => {
     const username = localStorage.getItem("username");
 
@@ -205,6 +214,7 @@ function checkPromo() {
         message.style.color = "red";
     }
 
+    // apply promo when Enter key is pressed
     document.getElementById("promoInput").addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
             checkPromo();
@@ -212,7 +222,7 @@ function checkPromo() {
     });
 }
 
-/* settings.html */
+// load profile and save settings
 window.addEventListener('DOMContentLoaded', (event) => {
     const usernameInput = document.getElementById('username');
     const firstNameInput = document.getElementById('first-name');
@@ -306,6 +316,7 @@ function displayProducts(products) {
     });
 }
 
+// handle product search
 function searchProducts() {
     const searchBar = document.getElementById('search-bar');
     const searchTerm = searchBar.value.toLowerCase();
@@ -319,24 +330,29 @@ function searchProducts() {
     updateSearchSuggestions(searchTerm);
 }
 
+// update and display search suggestions
 function updateSearchSuggestions(searchTerm) {
     const suggestionsBox = document.getElementById('search-suggestions');
     suggestionsBox.innerHTML = ''; 
 
+    // if search term is less than 2 characters, hide the suggestions box
     if (searchTerm.length < 2) {
         suggestionsBox.style.display = 'none';
         return;
     }
 
+    // filter products based on title matching search term and limit to 5 suggestions
     const matchingProducts = allProducts.filter(product => 
         product.title.toLowerCase().includes(searchTerm)
     ).slice(0, 5); 
 
+    // if no matching products, hide the suggestions box
     if (matchingProducts.length === 0) {
         suggestionsBox.style.display = 'none';
         return;
     }
 
+    // for each matching product, create a suggestion item
     matchingProducts.forEach(product => {
         const suggestionItem = document.createElement('div');
         suggestionItem.classList.add('suggestion-item');
@@ -346,6 +362,7 @@ function updateSearchSuggestions(searchTerm) {
             <span class="suggestion-text">${product.title}</span>
         `;
 
+        // click event redirect
         suggestionItem.addEventListener('click', () => {
             window.location.href = `product.html?id=${product.id}`;
         });
@@ -353,14 +370,17 @@ function updateSearchSuggestions(searchTerm) {
         suggestionsBox.appendChild(suggestionItem);
     });
 
+    // append suggestion item to suggestions box
     suggestionsBox.style.display = 'block';
 }
 
+// get product id from url
 function getProductId() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('id');
 }
 
+// fetch and display product details based on product id
 function fetchProductDetails(productId) {
     const productUrl = `https://fakestoreapi.com/products/${productId}`;
     
@@ -372,6 +392,7 @@ function fetchProductDetails(productId) {
             return response.json();
         })
         .then(product => {
+            // update the page with product details
             document.getElementById('product-category').textContent = product.category;
             document.getElementById('product-title').textContent = product.title;
             document.getElementById('product-description').textContent = product.description;
@@ -405,6 +426,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// add new listing
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("add-listing-form");
     
@@ -447,6 +469,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // display product listings from local storage
     const productContainer = document.getElementById("product-container");
     if (productContainer) {
         const listings = JSON.parse(localStorage.getItem("listings")) || [];
@@ -466,6 +489,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
         });
     }
+        // clear all listings from local storage
         const clearAllBtn = document.getElementById("clear-all-btn");
         if (clearAllBtn) {
             clearAllBtn.addEventListener("click", function () {
@@ -479,14 +503,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 });
 
+// profile image upload
 document.addEventListener("DOMContentLoaded", function () {
     const profileImg = document.getElementById("profile-img");
     const profileUpload = document.getElementById("profile-upload");
 
+    // check if profile picture is stored in local storage and display it
     if (localStorage.getItem("profilePicture")) {
         profileImg.src = localStorage.getItem("profilePicture");
     }
 
+    // image upload and save to local storage
     profileUpload.addEventListener("change", function (event) {
         const file = event.target.files[0];
         if (file) {

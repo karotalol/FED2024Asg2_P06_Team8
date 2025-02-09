@@ -1,12 +1,14 @@
+/* import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
 
-
+/* general reset for body, headings, paragraphs, and lists */
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
+/* basic body styling */
 body {
     font-family: 'Raleway', sans-serif;
     line-height: 1.6;
@@ -14,7 +16,7 @@ body {
     background-color: #ECF0F1;
 }
 
-/* header and navbar */
+/* header and navbar styling */
 header {
     width:100%;
     position: sticky;
@@ -35,6 +37,7 @@ header h1 {
     font-size: 1.8rem;
 }
 
+/* navbar styling */
 nav ul {
     display: flex;
     align-items: center;
@@ -52,7 +55,7 @@ nav ul {
     margin-right: 20px;
 }
 
-
+/* site title in navbar */
 .site-title {
     font-family: 'Raleway', sans-serif;
     margin-left: 10px;
@@ -61,7 +64,7 @@ nav ul {
     text-transform: uppercase;
 }
 
-
+/* navbar link styles */
 nav ul li a {
     text-decoration: none;
     color: #fff;
@@ -75,6 +78,7 @@ nav ul li a:hover {
     color: #ccc;
 }
 
+/* center content alignment */
 .center-content {
     display: flex;
     flex-direction: column;
@@ -84,6 +88,7 @@ nav ul li a:hover {
     margin-top: 2rem;
 }
 
+/* search bar styles */
 .search-bar {
     font-family: 'Raleway', sans-serif;
     width: 300px; 
@@ -102,6 +107,7 @@ nav ul li a:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
 }
 
+/* search suggestions styling */
 .search-suggestions {
     position: absolute;
     top: 100%; 
@@ -119,7 +125,6 @@ nav ul li a:hover {
     padding: 5px;
 }
 
-
 .suggestion-item {
     display: flex;
     align-items: center;
@@ -127,7 +132,6 @@ nav ul li a:hover {
     color: black;
     cursor: pointer;
     border-bottom: 1px solid #eee;
-    transition: background 0.2s;
 }
 
 .suggestion-item:last-child {
@@ -150,9 +154,6 @@ nav ul li a:hover {
     color: #333;
 }
 
-
-
-
 /* login button styles */
 .nav-login-button, .nav-register-button, .nav-logout-button {
     font-family: 'Raleway', sans-serif;
@@ -168,12 +169,14 @@ nav ul li a:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
+/* hover effects for buttons */
 .nav-login-button:hover, .nav-register-button:hover, .nav-logout-button:hover {
     background-color: darkgrey; 
     transform: translateY(-2px); 
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* logout button styles */
 .nav-logout-button {
     background-color: #ff4d4d; 
     color: white;
@@ -183,6 +186,7 @@ nav ul li a:hover {
     background-color: #e60000; 
 }
 
+/* notification container styles */
 .notification-container {
     position: relative;
 }
@@ -192,6 +196,7 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/* notification box styles */
 .notification-box {
     display: none;
     position: absolute;
@@ -217,7 +222,7 @@ nav ul li a:hover {
     display: block;
 }
 
-/* offcanvas */
+/* offcanvas menu styles */
 .offcanvas-menu {
     position: fixed;
     top: 0;
@@ -250,6 +255,7 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* offcanvas toggle button styling */
 .offcanvas-toggle {
     background: none;
     color: #fff;
@@ -259,25 +265,12 @@ nav ul li a:hover {
     margin-right: 1rem;
 }
 
+/* show offcanvas menu */
 .offcanvas-menu.active {
     left: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
-
-body, h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-body {
-    font-family: 'Raleway', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #ECF0F1;
-}
-
+/* product grid container */
 .product-container {
     max-width: 1200px;
     margin: 20px auto; 
@@ -291,6 +284,7 @@ body {
     justify-content: center;
 }
 
+/* product card styles */
 .product-card {
     background: #f9f9f9;
     border: 1px solid #ddd;
@@ -305,11 +299,13 @@ body {
     width: 100%; 
 }
 
+/* product card hover effects */
 .product-card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* image in product card */
 .product-image {
     width: 100%;
     height: 120px; 
@@ -317,6 +313,7 @@ body {
     border-radius: 5px;
 }
 
+/* product name styling */
 .product-name {
     font-size: 1em; 
     font-weight: bold;
@@ -327,12 +324,14 @@ body {
     white-space: nowrap;
 }
 
+/* product price styling */
 .product-price {
     font-size: 1em;
     color: #27ae60;
     font-weight: bold;
 }
 
+/* button to view product */
 .view-product-btn {
     background-color: #219f21;
     color: white;
@@ -347,6 +346,7 @@ body {
     background-color: #19c913;
 }
 
+/* add listing card styling */
 .add-listing-card {
     background: #f0f0f0;
     border: 2px dashed #bbb;
@@ -361,24 +361,13 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* add listing card hover effects */
 .add-listing-card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.add-listing-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.add-listing-text {
-    font-size: 1em;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
+/* add listing button styles */
 .add-listing-btn {
     background-color: #0073e6;
     color: white;
@@ -394,6 +383,7 @@ body {
     background-color: #005bb5;
 }
 
+/* clear all button styles */
 .clear-all-btn {
     background-color: #e60000; 
     color: white;
@@ -408,11 +398,12 @@ body {
     outline: none; 
 }
 
+/* clear all button hover effect */
 .clear-all-btn:hover {
     background-color: #b30000; 
 }
 
-
+/* footer styling */
 footer {
     background: #2c3e50;
     color: #fff;

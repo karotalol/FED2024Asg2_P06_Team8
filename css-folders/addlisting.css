@@ -1,3 +1,4 @@
+/* add listing form container */
 #add-listing-form {
     display: flex;
     flex-wrap: wrap;
@@ -8,6 +9,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* input and textarea styling inside the form */
 #add-listing-form input,
 #add-listing-form textarea {
     width: 100%;
@@ -17,6 +19,7 @@
     border-radius: 5px;
 }
 
+/* image upload button styling */
 .image-upload-label {
     display: block;
     background: #0073e6;
@@ -28,19 +31,23 @@
     margin-bottom: 10px;
 }
 
+/* hover effect on image upload button */
 .image-upload-label:hover {
     background: #005bb5;
 }
 
+/* hiding the file input element */
 #image-upload {
     display: none;
 }
 
+/* image preview styling */
 #image-preview {
     width: 50%;
     border-radius: 5px;
 }
 
+/* cart button styling */
 .cart-btn {
     background-color: #28a745;
     color: white;
@@ -52,6 +59,7 @@
     border-radius: 5px;
 }
 
+/* hover effect on cart button */
 .cart-btn:hover {
     background-color: #218838;
 }
