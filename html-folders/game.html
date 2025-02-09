@@ -45,20 +45,20 @@
     </style>
 </head>
 <body>
-    <p class="message">Get 30 coins in 2 minutes to get a DISCOUNT for your next purchase!</p>
+    <p class="message">Get 30 coins in 90 seconds to get a DISCOUNT for your next purchase!</p>
     <div class="coin-counter">Coins: <span id="coins">0</span></div>
     <div class="timer">Time Left: <span id="timer">90</span> sec</div>
     <button class="exit-btn" onclick="exitGame()">Exit</button>
     <script>
         let coins = 0;
-        let timeLeft = 90;
+        let timeLeft = 2;
         let gameEnded = false;
 
         function endGame(win) {
             gameEnded = true;
             document.body.innerHTML = win ? 
-                '<h1>You won! Enter "hello" in the Promo Code in your next purchase to get 20% off!</h1><a href="index.html">Back to Home Page</a>' :
-                '<h1>Sorry you lost.</h1><a href="index.html">Back to Home Page</a>';
+                '<h1>You won! Enter "hello" in the Promo Code in your next purchase to get 20% off!</h1><a href="/index.html">Back to Home Page</a>' :
+                '<h1>Sorry you lost.</h1><a href="/index.html">Back to Home Page</a>';
         }
         
         function spawnTinyImage() {
