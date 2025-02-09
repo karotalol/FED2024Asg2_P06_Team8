@@ -21,9 +21,13 @@ Stay updated with the latest trends and product launches through promotional con
 
 CODES FROM EXTERNAL SOURCES
 Wishlist page : https://bootsnipp.com/snippets/ElXol
+
 Shopping cart page : https://mdbootstrap.com/docs/standard/extended/shopping-carts/
+
 Product page: https://designmodo.com/create-product-page/
+
 Home page For you product list: https://mdbootstrap.com/snippets/standard/mdbootstrap/4852149?view=project#!
+
 Message page: https://www.bootdey.com/snippets/view/white-chat#html
 
 
