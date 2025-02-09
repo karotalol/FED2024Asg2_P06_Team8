@@ -49,6 +49,8 @@ RestDB: A NoSQL database service that provides a simple API to store and manage 
 # Following page: 
 ![image](https://github.com/user-attachments/assets/951b1a18-c53a-4a29-8a0c-274e1840f86e)
 
-# Figma Wireframe: https://www.figma.com/design/KjTzaw7YZDJHyoAso4CGfH/FED-Assg-2-MokeSell-Wireframe?node-id=38-16&t=gFlkyuQr61LeJysH-1
+# Figma Wireframe Link: https://www.figma.com/design/KjTzaw7YZDJHyoAso4CGfH/FED-Assg-2-MokeSell-Wireframe?node-id=38-16&t=gFlkyuQr61LeJysH-1
 
 # Github Link: https://github.com/karotalol/FED2024Asg2_P06_Team8
+
+# Google Drive Video Link: https://drive.google.com/file/d/1d14uFWNan4Buhfr6LkAIf9OdaymtBLWF/view?usp=sharing
