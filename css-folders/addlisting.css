@@ -1,0 +1,56 @@
+#add-listing-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#add-listing-form input,
+#add-listing-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.image-upload-label {
+    display: block;
+    background: #0073e6;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.image-upload-label:hover {
+    background: #005bb5;
+}
+
+#image-upload {
+    display: none;
+}
+
+#image-preview {
+    width: 50%;
+    border-radius: 5px;
+}
+
+.cart-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.cart-btn:hover {
+    background-color: #218838;
+}

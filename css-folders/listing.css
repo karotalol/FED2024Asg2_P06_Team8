@@ -327,14 +327,12 @@ body {
     white-space: nowrap;
 }
 
-/* Product price */
 .product-price {
     font-size: 1em;
     color: #27ae60;
     font-weight: bold;
 }
 
-/* View product button */
 .view-product-btn {
     background-color: #219f21;
     color: white;
@@ -349,3 +347,49 @@ body {
     background-color: #19c913;
 }
 
+.add-listing-card {
+    background: #f0f0f0;
+    border: 2px dashed #bbb;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 280px; 
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.add-listing-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.add-listing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-listing-text {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.add-listing-btn {
+    background-color: #0073e6;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.add-listing-btn:hover {
+    background-color: #005bb5;
+}

@@ -405,3 +405,4 @@ document.addEventListener('DOMContentLoaded', function() {
         fetchProductDetails(productId);
     }
 });
+

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Listing</title>
-    <link rel="stylesheet" href="../css-folders/listing.css">
+    <link rel="stylesheet" href="../css-folders/style.css">
+    <link rel="stylesheet" href="../css-folders/addlisting.css">
 </head>
 <body>
     <header>
@@ -44,18 +45,34 @@
         </div>
     </header>
 
-    <main>
-        <div class="product-container" id="product-container">
-        </div>
-        
-        <div class="product-card add-listing-card">
-            <div class="add-listing-content">
-                <p class="add-listing-text">Add your own listing</p>
-                <a href="../html-folders/addlisting.html" class="add-listing-btn">+ Add Listing</a>
+    <main class="container">
+        <form id="add-listing-form">
+            <div class="left-column">
+                <label for="image-upload" class="image-upload-label">Upload Image</label>
+                <input type="file" id="image-upload" accept="image/*" required>
+                <img id="image-preview" src="../images/default.jpg" alt="Image Preview">
             </div>
-    </main>
-    
 
+            <div class="right-column">
+                <div class="product-description">
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" required>
+
+                    <label for="title">Product Title:</label>
+                    <input type="text" id="title" required>
+
+                    <label for="description">Description:</label>
+                    <textarea id="description" required></textarea>
+                </div>
+
+                <div class="product-price">
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" required>
+                    <button type="submit" class="cart-btn">Submit Listing</button>
+                </div>
+            </div>
+        </form>
+    </main>
 
     <script src="../js-folders/script.js"></script>
 </body>
