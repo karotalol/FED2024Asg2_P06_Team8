@@ -18,8 +18,6 @@ Create an account to save shopping preferences, track orders, and receive specia
 Checkout securely with various payment methods (credit card, PayPal, etc.).
 Stay updated with the latest trends and product launches through promotional content.
 
-
-
 ## CODES FROM EXTERNAL SOURCES
 
 Wishlist page : https://bootsnipp.com/snippets/ElXol
