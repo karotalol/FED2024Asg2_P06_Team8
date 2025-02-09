@@ -270,29 +270,91 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 
+// load products and display
 const apiUrl = 'https://fakestoreapi.com/products';
+let allProducts = []; 
 
 function fetchProducts() {
     fetch(apiUrl)
         .then(response => response.json())
         .then(products => {
-            const productContainer = document.getElementById('product-container');
-            products.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.classList.add('product-card');
-                productCard.innerHTML = `
-                    <img src="${product.image}" alt="${product.title}" class="product-image">
-                    <h2 class="product-name">${product.title}</h2>
-                    <p class="product-price">$${product.price}</p>
-                    <a href="product.html?id=${product.id}" class="view-product-btn">View Product</a>
-                `;
-                productContainer.appendChild(productCard);
-            });
+            allProducts = products; 
+            displayProducts(products); 
         })
         .catch(error => console.error('Error fetching products:', error));
 }
 
-fetchProducts();
+function displayProducts(products) {
+    const productContainer = document.getElementById('product-container');
+    productContainer.innerHTML = ''; 
+
+    if (products.length === 0) {
+        productContainer.innerHTML = "<p>No products found.</p>";
+        return;
+    }
+
+    products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
+        productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.title}" class="product-image">
+            <h2 class="product-name">${product.title}</h2>
+            <p class="product-price">$${product.price}</p>
+            <a href="product.html?id=${product.id}" class="view-product-btn">View Product</a>
+        `;
+        productContainer.appendChild(productCard);
+    });
+}
+
+function searchProducts() {
+    const searchBar = document.getElementById('search-bar');
+    const searchTerm = searchBar.value.toLowerCase();
+    
+    const filteredProducts = allProducts.filter(product => 
+        product.title.toLowerCase().includes(searchTerm) ||
+        product.category.toLowerCase().includes(searchTerm)
+    );
+
+    displayProducts(filteredProducts); 
+    updateSearchSuggestions(searchTerm);
+}
+
+function updateSearchSuggestions(searchTerm) {
+    const suggestionsBox = document.getElementById('search-suggestions');
+    suggestionsBox.innerHTML = ''; 
+
+    if (searchTerm.length < 2) {
+        suggestionsBox.style.display = 'none';
+        return;
+    }
+
+    const matchingProducts = allProducts.filter(product => 
+        product.title.toLowerCase().includes(searchTerm)
+    ).slice(0, 5); 
+
+    if (matchingProducts.length === 0) {
+        suggestionsBox.style.display = 'none';
+        return;
+    }
+
+    matchingProducts.forEach(product => {
+        const suggestionItem = document.createElement('div');
+        suggestionItem.classList.add('suggestion-item');
+        
+        suggestionItem.innerHTML = `
+            <img src="${product.image}" alt="${product.title}" class="suggestion-image">
+            <span class="suggestion-text">${product.title}</span>
+        `;
+
+        suggestionItem.addEventListener('click', () => {
+            window.location.href = `product.html?id=${product.id}`;
+        });
+
+        suggestionsBox.appendChild(suggestionItem);
+    });
+
+    suggestionsBox.style.display = 'block';
+}
 
 function getProductId() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -300,8 +362,9 @@ function getProductId() {
 }
 
 function fetchProductDetails(productId) {
-    const apiUrl = `https://fakestoreapi.com/products/${productId}`;
-    fetch(apiUrl)
+    const productUrl = `https://fakestoreapi.com/products/${productId}`;
+    
+    fetch(productUrl)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Product not found');
@@ -323,6 +386,20 @@ function fetchProductDetails(productId) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    fetchProducts(); 
+
+    const searchBar = document.getElementById('search-bar');
+    if (searchBar) {
+        searchBar.addEventListener('input', searchProducts);
+    }
+
+
+    document.addEventListener('click', (event) => {
+        if (!event.target.matches('.search-bar, .suggestion-item')) {
+            document.getElementById('search-suggestions').style.display = 'none';
+        }
+    });
+
     const productId = getProductId();
     if (productId) {
         fetchProductDetails(productId);

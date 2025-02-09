@@ -307,7 +307,6 @@ html, body {
     opacity: 1;
 }
 
-  /* Product Description */
 .product-description {
   border-bottom: 1px solid #E1E8EE;
   margin-bottom: 20px;
@@ -332,7 +331,6 @@ html, body {
   line-height: 24px;
 }
 
-/* Product Color */
 .product-color {
   margin-bottom: 30px;
 }
@@ -351,7 +349,6 @@ html, body {
 }
  
 
-/* Cable Configuration */
 .cable-choose {
   margin-bottom: 20px;
 }
